@@ -7,6 +7,10 @@ if __name__ == "__main__":
 
     sheets = workbook.sheets()
 
-    x: xlrd.sheet.Sheet
-    for x in sheets:
-        print(f"{x.name}: lines: {x.nrows}")
+    x: xlrd.sheet.Sheet = sheets[0]
+
+    for rowNum in range(x.nrows):
+        row = x.row(rowNum)
+        line = "".join(str(cell.value) + "," for cell in row)
+        print(line)
+
