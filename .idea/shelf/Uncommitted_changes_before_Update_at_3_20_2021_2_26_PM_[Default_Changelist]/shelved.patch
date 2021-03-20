@@ -1,0 +1,20 @@
+Index: core/dataGrapher/graph.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/core/dataGrapher/graph.py b/core/dataGrapher/graph.py
+new file mode 100644
+--- /dev/null	(date 1616262216337)
++++ b/core/dataGrapher/graph.py	(date 1616262216337)
+@@ -0,0 +1,6 @@
++import parser
++
++
++if __name__ == "__main__":
++
++
+diff --git a/core/dataGrapher/__init__.py b/core/dataGrapher/__init__.py
+new file mode 100644
+diff --git a/core/main.py b/core/main.py
+new file mode 100644
