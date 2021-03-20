@@ -1,0 +1,10 @@
+  FAFSA
+   
+  Quarterly data 
+  Total debt/app cation amount?
+  Find regression for data pre-pandemic
+  Check if pandemic fits the regression?
+  
+  Need some kind of statistical method to test if 2020 data
+  is consistent with the trend
+                      
