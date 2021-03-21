@@ -5,7 +5,7 @@ title: Data Visualization
 
 <style>
     section#main_content {
-        max-width: 700px; !important;
+        max-width: 700px;
     }
 </style>
 <body>
@@ -24,7 +24,7 @@ title: Data Visualization
     </p>
 
     <img src="images/DebtSummary1.png" alt="Fig1) Summary of total Debt"/>
-    <!-- Add figure number -->
+    <h4>Fig1) Summary of total Debt</h4>
     <p>
         The blue line was created using the historic data, from 2013 Q1 to 2019 Q4; the red from 2013 Q1 to 2020 Q4.
         These allowed us to see a change in the slope, indicating a possible correlation of the total debt to the
@@ -40,7 +40,7 @@ title: Data Visualization
     </p>
 
     <img src="images/DebtResid1.png" alt="Fig2) Residual Analysis of total Debt"/>
-
+    <h4>Fig2) Residual Analysis of total Debt</h4>
     <p>
         From such a graph, we can draw conclusions from the distance of the points from zero.
         Specifically, if the standardized residual is outside the range [-2, 2]
@@ -56,7 +56,9 @@ title: Data Visualization
     </p>
 
     <img src="images/RecipSummary1.png" alt="Fig3) Recipient Summary"/>
+    <h4>Fig3) Summary of total Recipients</h4>
     <img src="images/RecipResid1.png" alt="Fig4) Recipient Residual Analysis"/>
+    <h4>Fig4) Residual Analysis of Recipients</h4>
 
     <p>
         From these, we can come to similar conclusions with the outlying data. Again, there seems to be a a significant
@@ -73,7 +75,9 @@ title: Data Visualization
     </p>
 
     <img src="images/DebtSummary2.png" alt="Fig5) Debt summary 2"/>
+    <h4>Fig5) Summary 2 of Debt</h4>
     <img src="images/DebtResid2.png" alt="Fig6) Debt Residual Analysis 2"/>
+    <h4>Fig6) Residual Analysis 2 of Debt</h4>
 
     <p>
         These new regression curves proved to be more accurate, proven by both the R-Squared value and by the
@@ -84,7 +88,9 @@ title: Data Visualization
     </p>
 
     <img src="images/RecipSummary2.png" alt="Fig7) Recipient Summary 2"/>
+    <h4>Fig7) Summary 2 of Recipients</h4>
     <img src="images/RecipResid2.png" alt="Fig8) Recipient Residual Analysis 2"/>
+    <h4>Fig8) Residual Analysis 2 of Recipients</h4>
 
     <p>
         Switching to a second degree polynomial also dramatically increased accuracy for the total recipient data.
