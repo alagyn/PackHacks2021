@@ -50,8 +50,8 @@ if __name__ == "__main__":
         pandResiduals.append(observed - expected)
         totalResid.append(observed - expected)
 
-    pandResidSD = sp.tstd(totalResid)
-    # pandResidSD = residualSD
+    # pandResidSD = sp.tstd(totalResid)
+    pandResidSD = residualSD
     stdPandResid = [x / pandResidSD for x in pandResiduals]
 
     # Make plot
