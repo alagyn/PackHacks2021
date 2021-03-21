@@ -2,7 +2,7 @@ import pandas
 import plotly.express as px
 
 
-def create_map(values, num):
+def create_map(values):
     colNames = ["state", "value"]
     dictOfStates = {
         "AL": ["AL", values[0]],
@@ -67,14 +67,14 @@ def create_map(values, num):
                         hover_name="state",  # DataFrame column hover info
                         locationmode='USA-states')  # Set to plot as US States
     fig.update_layout(
-        title_text='Federal Student Loan Portfolio by Borrower Location',  # Create a Title
+        title_text='Federal Student Loan Portfolio by Borrower Location (per Billion Dollars)',  # Create a Title
         geo_scope='usa',  # Plot only the USA instead of globe
     )
     fig.show()  # Output the plot to the screen
-    fig.write_html(f'../../docs/output/map{num}.html')
+    fig.write_html(f'../../docs/output/map.html')
 
 
 class InteractiveMapUnitedStates:
 
-    def __init__(self, balance, num):
-        create_map(balance, num)
+    def __init__(self, balance):
+        create_map(balance)
