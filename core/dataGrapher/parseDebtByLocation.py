@@ -1,6 +1,5 @@
 import xlrd
-
-from core.dataGrapher import InteractiveMapUnitedStates
+import InteractiveMapUnitedStates
 
 if __name__ == "__main__":
 
