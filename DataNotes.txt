@@ -7,4 +7,17 @@
   
   Need some kind of statistical method to test if 2020 data
   is consistent with the trend
+  
+  Difference of means test
+  
+  Regression
+    R-sq, we want close to 100% or 1.0
                       
+                      
+  residuals for plot
+    standardizes your residuals?
+    should go from -2 to 2, outside of that could be significant
+    get residuals of new points with old regression
+    if outside bound, could be significant
+    
+    residual = predicted - measured

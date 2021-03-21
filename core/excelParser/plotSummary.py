@@ -1,73 +1,60 @@
-import xlrd
+import parseSummaryData
 import matplotlib.pyplot as plt
+import matplotlib.lines as lines
 import numpy as np
 
 # Plots a regression of the total debt
 if __name__ == "__main__":
-    # Open the workbook
-    data = xlrd.open_workbook("../../data/GraphingData.xls")
-    # Get the sheet
-    sheet = data.sheets()[0]
+    # get our data
+    data = parseSummaryData.getData()
+
     # Make a plot
+    fig: plt.Figure
+    ax: plt.Axes
     fig, ax = plt.subplots()
-    # Get the columns from the sheet
-    yearCol = sheet.col(0)
-    quartCol = sheet.col(1)
-    debtCol = sheet.col(2)
-    recipCol = sheet.col(3)
+    ax.set_title("Outstanding Loan Amounts")
+    ax.set_xlabel("Yearly Quarters")
+    ax.set_ylabel("Debt (in billion dollars)")
+    ax.yaxis.set_major_formatter('${x:1.2f}')
+    ax.yaxis.set_tick_params(which='major', labelcolor='green')
 
-    # Setup our plotting lists
-    yearQuartList = []
-    yearTicks = []
-    debtVals = []
-    pandYQ = []
-    pandVals = []
-    # Iterate through each row, skipping the header
-    for idx in range(1, len(yearCol)):
-        year = int(yearCol[idx].value)
-        quarter = str(quartCol[idx].value)
-        # Combine year and quarter
-        yq = f"{str(year)}:{quarter}"
 
-        if year < 2020:
-            yearQuartList.append(yq)
 
-            # If Q1, append to the x axis ticks
-            if quarter == "Q1":
-                yearTicks.append(yq)
-
-            debtVals.append(debtCol[idx].value)
-        else:
-            pandYQ.append(yq)
-            if quarter == "Q1":
-                yearTicks.append(yq)
-
-            pandVals.append(debtCol[idx].value)
+    ax.grid(True, linestyle='-.')
 
     # range of every year to use in regression
-    idxRange = [x for x in range(len(yearQuartList))]
+    idxRange = [x for x in range(len(data.yearQuartList))]
     # get slope/coefficient
-    baseCoeff = np.polyfit(idxRange, debtVals, 1)
+    baseCoeff = np.polyfit(idxRange, data.debtVals, 1)
     # create regression func
     basePolyFunc = np.poly1d(baseCoeff)
 
     # plot our base data and regression
-    ax.plot(yearQuartList, debtVals, '.b')
-    ax.plot(yearQuartList, basePolyFunc(idxRange), ':b')
+
+    ax.plot(data.yearQuartList, data.debtVals, '.b')
+    # ax.plot(data.yearQuartList, basePolyFunc(idxRange), ':b')
+    oldRegLine = lines.Line2D(idxRange, basePolyFunc(idxRange), color='b', marker='', linestyle=':',
+                              label="Historic debt")
+    ax.add_line(oldRegLine)
 
     # do the same to total data
-    yearQuartList.extend(pandYQ)
-    debtVals.extend(pandVals)
-    idxRange = [x for x in range(len(yearQuartList))]
+    data.yearQuartList.extend(data.pandYQ)
+    data.debtVals.extend(data.pandVals)
+    idxRange = [x for x in range(len(data.yearQuartList))]
 
-    pCoeff = np.polyfit(idxRange, debtVals, 1)
+    pCoeff = np.polyfit(idxRange, data.debtVals, 1)
     pPolyFunc = np.poly1d(pCoeff)
 
     # plot pandemic data
-    ax.plot(pandYQ, pandVals, "r.")
-    s = -len(pandYQ) - 1
-    ax.plot(yearQuartList[s:], pPolyFunc(idxRange[s:]), '--y')
+    ax.plot(data.pandYQ, data.pandVals, "r.")
+    s = -len(data.pandYQ) - 1
+    # ax.plot(data.yearQuartList[s:], pPolyFunc(idxRange[s:]), '--y')
+    pandRegLine = lines.Line2D(idxRange[s:], pPolyFunc(idxRange[s:]), color='y', marker='', linestyle=':',
+                               label="Pandemic Debt")
+    ax.add_line(pandRegLine)
 
-    plt.xticks(yearTicks)
+    ax.legend(handles=[oldRegLine, pandRegLine])
+
+    plt.xticks(data.yearTicks)
 
     plt.show()
