@@ -18,8 +18,6 @@ if __name__ == "__main__":
     ax.yaxis.set_major_formatter('${x:1.2f}')
     ax.yaxis.set_tick_params(which='major', labelcolor='green')
 
-
-
     ax.grid(True, linestyle='-.')
 
     # range of every year to use in regression

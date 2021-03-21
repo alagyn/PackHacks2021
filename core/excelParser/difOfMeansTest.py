@@ -1,5 +1,6 @@
 import scipy.stats as sp
 import matplotlib.pyplot as plt
+import matplotlib.lines as mLines
 import parseSummaryData
 
 
@@ -18,6 +19,7 @@ class Line:
         self.slope = slope
 
     '''Returns the estimated Y value for the passed X value'''
+
     def __call__(self, xVal) -> float:
         return self.inter + self.slope * xVal
 
@@ -49,21 +51,47 @@ if __name__ == "__main__":
     # do it again for the pandemic data using the historic regression line
     pandIdx = range(len(idxRange), len(idxRange) + len(data.pandYQ))
     pandResiduals = []
+
     for idx in range(len(data.pandYQ)):
         observed = data.pandVals[idx]
         expected = regLine(pandIdx[idx])
-        pandResiduals.append(observed - expected)
+        resid = observed - expected
+        pandResiduals.append(resid)
 
-    pandResidSD = sp.tstd(pandResiduals)
+    # pandResidSD = sp.tstd(totalResid)
+    pandResidSD = residualSD
     stdPandResid = [x / pandResidSD for x in pandResiduals]
 
     ax: plt.Axes
     fig, ax = plt.subplots()
     ax.set_title("Standardized Residuals")
+    ax.grid(True, linestyle='-.')
 
     # Plot historic resids
-    ax.plot(idxRange, stdResiduals, '.b')
+    baseLine = mLines.Line2D(idxRange, stdResiduals, marker='.', linestyle='', color='b',
+                             label='Historic Debt')
     # Plot pandemic resids
-    ax.plot(pandIdx, stdPandResid, '.r')
+    pandLine = mLines.Line2D(pandIdx, stdPandResid, marker='p', linestyle='', color='r',
+                             label='Pandemic Debt')
+
+    ax.add_line(baseLine)
+    ax.add_line(pandLine)
+
+    xmin = -1
+    xmax = idxRange[-1] + len(pandIdx) + 1
+
+
+    ax.hlines(y=[-2,2], xmin=xmin, xmax=xmax, label='2 * Standard Deviation')
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(-5, 5)
+
+    plt.xticks([x for x in range(0, data.totalLen(), 4)], data.yearTicks)
+
+    # ax.legend(handles=[baseLine, pandLine])
+    ax.legend()
+
+    ax.set_ylabel("Residual / Standard Deviation of all Residuals")
+
+    ax.plot()
 
     plt.show()

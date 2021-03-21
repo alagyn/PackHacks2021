@@ -21,3 +21,7 @@
     if outside bound, could be significant
     
     residual = predicted - measured
+    
+    
+TODO
+  check the recipient count as well

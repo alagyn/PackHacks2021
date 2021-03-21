@@ -3,11 +3,19 @@ import xlrd
 
 class SummaryData:
     def __init__(self):
+        # labels for year and quarter
         self.yearQuartList = []
+        # Axis labels with only Q1
         self.yearTicks = []
+        # Y vals for historic data
         self.debtVals = []
+        # labels for pandemic year and quarter
         self.pandYQ = []
+        # Y vals for pandemic data
         self.pandVals = []
+
+    def totalLen(self):
+        return len(self.yearQuartList) + len(self.pandYQ)
 
 
 def getData() -> SummaryData:
@@ -33,17 +41,13 @@ def getData() -> SummaryData:
 
         if year < 2020:
             data.yearQuartList.append(yq)
-
-            # If Q1, append to the x axis ticks
-            if quarter == "Q1":
-                data.yearTicks.append(yq)
-
             data.debtVals.append(debtCol[idx].value)
         else:
             data.pandYQ.append(yq)
-            if quarter == "Q1":
-                data.yearTicks.append(yq)
-
             data.pandVals.append(debtCol[idx].value)
+
+        # If Q1, append to the x axis ticks
+        if quarter == "Q1":
+            data.yearTicks.append(yq)
 
     return data
