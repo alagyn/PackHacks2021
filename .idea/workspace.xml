@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa44b6f0-1a59-40d8-9c0d-f17d10098b2e" name="Default Changelist" comment="Moved output files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/parseDebtByLocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/dataGrapher/parseDebtByLocation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (0).xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (1).xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (2).xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (3).xls" beforeDir="false" afterPath="$PROJECT_DIR$/data/Portfolio-by-Location.xls" afterDir="false" />
+    <list default="true" id="fa44b6f0-1a59-40d8-9c0d-f17d10098b2e" name="Default Changelist" comment="Updated a bulk amount of files">
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/maps.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/maps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/output/map0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/output/map1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/output/map2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/output/map3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/maps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +109,7 @@
       <workItem from="1616291580663" duration="1460000" />
       <workItem from="1616294630481" duration="11999000" />
       <workItem from="1616307301217" duration="3559000" />
-      <workItem from="1616310887716" duration="1912000" />
+      <workItem from="1616310887716" duration="2053000" />
     </task>
     <task id="LOCAL-00001" summary="Created a project directory">
       <created>1616258499085</created>
@@ -170,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616312005469</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated a bulk amount of files">
+      <created>1616312866885</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616312866885</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +193,8 @@
     <MESSAGE value="Added a site for the maps" />
     <MESSAGE value="Updated the index site" />
     <MESSAGE value="Moved output files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved output files" />
+    <MESSAGE value="Updated a bulk amount of files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated a bulk amount of files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PackHacks2021$createStates.coverage" NAME="createStates Coverage Results" MODIFIED="1616308389159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core/dataGrapher" />
