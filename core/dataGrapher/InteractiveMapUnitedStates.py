@@ -2,6 +2,8 @@ import pandas
 import plotly.express as px
 
 
+# Contains code snippets from "https://wellsr.com/python/creating-python-choropleth-maps-with-plotly/"
+
 def create_map(values):
     colNames = ["state", "value"]
     dictOfStates = {
