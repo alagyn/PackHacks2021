@@ -10,6 +10,7 @@ This project tackles the data analytics challenge of college financial datasets.
  - scipy
  - xlrd
  - plotly
+ - All other dependencies can be found in [requirements.txt ](https://github.com/alagyn/PackHacks2021/blob/main/requirements.txt)
 
 ### Execution READMEs are in core/dataGrapher and core/pandemicData
 
