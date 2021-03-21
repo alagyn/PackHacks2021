@@ -1,4 +1,4 @@
-from PackHacks2021.core.pandemicDebt import parseSummaryData
+import parseSummaryData
 import matplotlib.pyplot as plt
 import matplotlib.lines as lines
 import numpy as np

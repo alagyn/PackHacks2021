@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa44b6f0-1a59-40d8-9c0d-f17d10098b2e" name="Default Changelist" comment="Updated README.md and dataGrapher package">
+    <list default="true" id="fa44b6f0-1a59-40d8-9c0d-f17d10098b2e" name="Default Changelist" comment="Added a style override to index.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pandemicDebt/plotSummary.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/pandemicDebt/plotSummary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pandemicDebt/residualTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/pandemicDebt/residualTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <workItem from="1616291580663" duration="1460000" />
       <workItem from="1616294630481" duration="11999000" />
       <workItem from="1616307301217" duration="3559000" />
-      <workItem from="1616310887716" duration="9065000" />
+      <workItem from="1616310887716" duration="9960000" />
     </task>
     <task id="LOCAL-00001" summary="Created a project directory">
       <created>1616258499085</created>
@@ -187,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616319665229</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added a style override to index.html">
+      <created>1616320029793</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616320029793</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +224,8 @@
     <MESSAGE value="Updated a bulk amount of files" />
     <MESSAGE value="Made changes to HTML files" />
     <MESSAGE value="Updated README.md and dataGrapher package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md and dataGrapher package" />
+    <MESSAGE value="Added a style override to index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a style override to index.html" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PackHacks2021$createStates.coverage" NAME="createStates Coverage Results" MODIFIED="1616308389159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core/dataGrapher" />

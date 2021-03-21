@@ -4,7 +4,7 @@ import matplotlib.lines as mLines
 import parseSummaryData
 import numpy as np
 import sys
-from PackHacks2021.core.pandemicDebt.rsquared import rSquared
+from rsquared import rSquared
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
