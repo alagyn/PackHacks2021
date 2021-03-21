@@ -71,7 +71,7 @@ def create_map(values, num):
         geo_scope='usa',  # Plot only the USA instead of globe
     )
     fig.show()  # Output the plot to the screen
-    fig.write_html(f'../../output/map{num}.html')
+    fig.write_html(f'../../docs/output/map{num}.html')
 
 
 class InteractiveMapUnitedStates:
