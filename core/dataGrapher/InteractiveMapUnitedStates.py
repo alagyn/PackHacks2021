@@ -1,6 +1,7 @@
 import pandas
 import plotly.express as px
 
+
 def create_map(values, num):
     colNames = ["state", "value"]
     dictOfStates = {
@@ -77,4 +78,3 @@ class InteractiveMapUnitedStates:
 
     def __init__(self, balance, num):
         create_map(balance, num)
-

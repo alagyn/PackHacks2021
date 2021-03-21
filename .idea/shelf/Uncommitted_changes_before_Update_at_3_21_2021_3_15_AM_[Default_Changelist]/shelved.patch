@@ -1,0 +1,172 @@
+Index: core/dataGrapher/InteractiveMapUnitedStates.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pandas\r\nimport plotly.express as px\r\n\r\ndef create_map(values, num):\r\n    colNames = [\"state\", \"value\"]\r\n    dictOfStates = {\r\n        \"AL\": [\"AL\", values[0]],\r\n        \"AK\": [\"AK\", values[1]],\r\n        \"AZ\": [\"AZ\", values[2]],\r\n        \"AR\": [\"AR\", values[3]],\r\n        \"CA\": [\"CA\", values[4]],\r\n        \"CO\": [\"CO\", values[5]],\r\n        \"CT\": [\"CT\", values[6]],\r\n        \"DE\": [\"DE\", values[7]],\r\n        \"DC\": [\"DC\", values[8]],\r\n        \"FL\": [\"FL\", values[9]],\r\n        \"GA\": [\"GA\", values[10]],\r\n        \"HI\": [\"HI\", values[11]],\r\n        \"ID\": [\"ID\", values[12]],\r\n        \"IL\": [\"IL\", values[13]],\r\n        \"IN\": [\"IN\", values[14]],\r\n        \"IA\": [\"IA\", values[15]],\r\n        \"KS\": [\"KS\", values[16]],\r\n        \"KY\": [\"KY\", values[17]],\r\n        \"LA\": [\"LA\", values[18]],\r\n        \"ME\": [\"ME\", values[19]],\r\n        \"MD\": [\"MD\", values[20]],\r\n        \"MA\": [\"MA\", values[21]],\r\n        \"MI\": [\"MI\", values[22]],\r\n        \"MN\": [\"MN\", values[23]],\r\n        \"MS\": [\"MS\", values[24]],\r\n        \"MO\": [\"MO\", values[25]],\r\n        \"MT\": [\"MT\", values[26]],\r\n        \"NE\": [\"NE\", values[27]],\r\n        \"NV\": [\"NV\", values[28]],\r\n        \"NH\": [\"NH\", values[29]],\r\n        \"NJ\": [\"NJ\", values[30]],\r\n        \"NM\": [\"NM\", values[31]],\r\n        \"NY\": [\"NY\", values[32]],\r\n        \"NC\": [\"NC\", values[33]],\r\n        \"ND\": [\"ND\", values[34]],\r\n        \"OH\": [\"OH\", values[35]],\r\n        \"OK\": [\"OK\", values[36]],\r\n        \"OR\": [\"OR\", values[37]],\r\n        \"PA\": [\"PA\", values[38]],\r\n        \"RI\": [\"RI\", values[39]],\r\n        \"SC\": [\"SC\", values[40]],\r\n        \"SD\": [\"SD\", values[41]],\r\n        \"TN\": [\"TN\", values[42]],\r\n        \"TX\": [\"TX\", values[43]],\r\n        \"UT\": [\"UT\", values[44]],\r\n        \"VT\": [\"VT\", values[45]],\r\n        \"VA\": [\"VA\", values[46]],\r\n        \"WA\": [\"WA\", values[47]],\r\n        \"WV\": [\"WV\", values[48]],\r\n        \"WI\": [\"WI\", values[49]],\r\n        \"WY\": [\"WY\", values[50]]}\r\n\r\n    state_df = pandas.DataFrame.from_dict(dictOfStates, orient='index')\r\n\r\n    state_df.columns = colNames\r\n\r\n    fig = px.choropleth(state_df,  # Input Pandas DataFrame\r\n                        locations=\"state\",  # DataFrame column with locations\r\n                        color=\"value\",  # DataFrame column with color values\r\n                        hover_name=\"state\",  # DataFrame column hover info\r\n                        locationmode='USA-states')  # Set to plot as US States\r\n    fig.update_layout(\r\n        title_text='Federal Student Loan Portfolio by Borrower Location',  # Create a Title\r\n        geo_scope='usa',  # Plot only the USA instead of globe\r\n    )\r\n    fig.show()  # Output the plot to the screen\r\n    fig.write_html(f'../../output/map{num}.html')\r\n\r\n\r\nclass InteractiveMapUnitedStates:\r\n\r\n    def __init__(self, balance, num):\r\n        create_map(balance, num)\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/core/dataGrapher/InteractiveMapUnitedStates.py b/core/dataGrapher/InteractiveMapUnitedStates.py
+--- a/core/dataGrapher/InteractiveMapUnitedStates.py	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
++++ b/core/dataGrapher/InteractiveMapUnitedStates.py	(date 1616310845457)
+@@ -1,6 +1,7 @@
+ import pandas
+ import plotly.express as px
+ 
++
+ def create_map(values, num):
+     colNames = ["state", "value"]
+     dictOfStates = {
+@@ -77,4 +78,3 @@
+ 
+     def __init__(self, balance, num):
+         create_map(balance, num)
+-
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM__Default_Changelist_.xml	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
++++ /dev/null	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM_[Default_Changelist]" date="1616264777593" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/20/2021 2:26 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fa44b6f0-1a59-40d8-9c0d-f17d10098b2e\" name=\"Default Changelist\" comment=\"Added a graph for the US. TODO add data per state\">\r\n      <change afterPath=\"$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/PackHacks2021.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/PackHacks2021.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/core/dataGrapher/.ipynb_checkpoints/Untitled-checkpoint.ipynb\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/core/dataGrapher/.ipynb_checkpoints/Untitled1-checkpoint.ipynb\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.ipynb\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/core/dataGrapher/createStates.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/core/dataGrapher/graph.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/Portfolio-by-Location (1).xls\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/Portfolio-by-Location (1).xls\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/Portfolio-by-Location (2).xls\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/Portfolio-by-Location (2).xls\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/Portfolio-by-Location (3).xls\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/Portfolio-by-Location (3).xls\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/Portfolio-by-Location.xls\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Jupyter Notebook\" />\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"SET_USER_NAME_GLOBALLY\" value=\"false\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1q1pSjuj1YpLNRivKpQTWnl70zC\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/data/mapping\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Ryan\\CodeProjects\\PycharmProjects\\PackHacks\\PackHacks2021\\data\\mapping\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.parseDebtByLocation\">\r\n    <configuration name=\"createStates\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"PackHacks2021\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/core/dataGrapher\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/core/dataGrapher/createStates.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"parseDebtByLocation\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"PackHacks2021\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/core/excelParser\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/core/excelParser/parseDebtByLocation.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.parseDebtByLocation\" />\r\n        <item itemvalue=\"Python.createStates\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fa44b6f0-1a59-40d8-9c0d-f17d10098b2e\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1616256952663</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1616256952663</updated>\r\n      <workItem from=\"1616256956197\" duration=\"590000\" />\r\n      <workItem from=\"1616258036647\" duration=\"4212000\" />\r\n      <workItem from=\"1616264858451\" duration=\"2850000\" />\r\n      <workItem from=\"1616269732927\" duration=\"7385000\" />\r\n      <workItem from=\"1616283477323\" duration=\"878000\" />\r\n      <workItem from=\"1616284808553\" duration=\"1483000\" />\r\n      <workItem from=\"1616286349387\" duration=\"519000\" />\r\n      <workItem from=\"1616286949118\" duration=\"821000\" />\r\n      <workItem from=\"1616289070043\" duration=\"339000\" />\r\n      <workItem from=\"1616289502186\" duration=\"15000\" />\r\n      <workItem from=\"1616291580663\" duration=\"1460000\" />\r\n      <workItem from=\"1616294630481\" duration=\"11999000\" />\r\n      <workItem from=\"1616307301217\" duration=\"2955000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Created a project directory\">\r\n      <created>1616258499085</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616258499085</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added a graph for the US. TODO add data per state\">\r\n      <created>1616303082321</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1616303082321</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Created a project directory\" />\r\n    <MESSAGE value=\"Added a graph for the US. TODO add data per state\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added a graph for the US. TODO add data per state\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/PackHacks2021$createStates.coverage\" NAME=\"createStates Coverage Results\" MODIFIED=\"1616308389159\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/core/dataGrapher\" />\r\n    <SUITE FILE_PATH=\"coverage/PackHacks2021$parseDebtByLocation.coverage\" NAME=\"parseDebtByLocation Coverage Results\" MODIFIED=\"1616310096162\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/core/excelParser\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
++++ b/.idea/workspace.xml	(date 1616310938778)
+@@ -5,19 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="fa44b6f0-1a59-40d8-9c0d-f17d10098b2e" name="Default Changelist" comment="Added a graph for the US. TODO add data per state">
+-      <change afterPath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/PackHacks2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PackHacks2021.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_2021_2_26_PM__Default_Changelist_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/.ipynb_checkpoints/Untitled1-checkpoint.ipynb" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.ipynb" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/createStates.py" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/core/dataGrapher/graph.py" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (1).xls" beforeDir="false" afterPath="$PROJECT_DIR$/data/Portfolio-by-Location (1).xls" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (2).xls" beforeDir="false" afterPath="$PROJECT_DIR$/data/Portfolio-by-Location (2).xls" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location (3).xls" beforeDir="false" afterPath="$PROJECT_DIR$/data/Portfolio-by-Location (3).xls" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/Portfolio-by-Location.xls" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/dataGrapher/InteractiveMapUnitedStates.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,6 +52,10 @@
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\Ryan\CodeProjects\PycharmProjects\PackHacks\PackHacks2021\data\mapping" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Ryan\CodeProjects\PycharmProjects\PackHacks\PackHacks2021\core\dataGrapher" />
++      <recent name="C:\Users\Ryan\CodeProjects\PycharmProjects\PackHacks\PackHacks2021\core\pandemicDebt" />
+     </key>
+   </component>
+   <component name="RunManager" selected="Python.parseDebtByLocation">
+@@ -98,7 +94,7 @@
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/excelParser/parseDebtByLocation.py" />
++      <option name="SCRIPT_NAME" value="C:\Users\Ryan\CodeProjects\PycharmProjects\PackHacks\PackHacks2021\core\dataGrapher\parseDebtByLocation.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -134,7 +130,7 @@
+       <workItem from="1616289502186" duration="15000" />
+       <workItem from="1616291580663" duration="1460000" />
+       <workItem from="1616294630481" duration="11999000" />
+-      <workItem from="1616307301217" duration="2955000" />
++      <workItem from="1616307301217" duration="3559000" />
+     </task>
+     <task id="LOCAL-00001" summary="Created a project directory">
+       <created>1616258499085</created>
+@@ -150,7 +146,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1616303082321</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Created parseDebtByLocation. Changed InteractiveMapUnitedStates to class">
++      <created>1616310400887</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1616310400887</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Moved file to python package">
++      <created>1616310602351</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1616310602351</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -171,10 +181,12 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Created a project directory" />
+     <MESSAGE value="Added a graph for the US. TODO add data per state" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added a graph for the US. TODO add data per state" />
++    <MESSAGE value="Created parseDebtByLocation. Changed InteractiveMapUnitedStates to class" />
++    <MESSAGE value="Moved file to python package" />
++    <option name="LAST_COMMIT_MESSAGE" value="Moved file to python package" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/PackHacks2021$createStates.coverage" NAME="createStates Coverage Results" MODIFIED="1616308389159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core/dataGrapher" />
+-    <SUITE FILE_PATH="coverage/PackHacks2021$parseDebtByLocation.coverage" NAME="parseDebtByLocation Coverage Results" MODIFIED="1616310096162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core/excelParser" />
++    <SUITE FILE_PATH="coverage/PackHacks2021$parseDebtByLocation.coverage" NAME="parseDebtByLocation Coverage Results" MODIFIED="1616310276248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core/excelParser" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/PackHacks2021.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.9\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/PackHacks2021.iml b/.idea/PackHacks2021.iml
+--- a/.idea/PackHacks2021.iml	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
++++ b/.idea/PackHacks2021.iml	(date 1616310845440)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.9 (PackHacks2021)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 05e3082066c3287a30c7d191e4a86c18b4ea6085)
++++ b/.idea/misc.xml	(date 1616310845452)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (PackHacks2021)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
