@@ -4,10 +4,19 @@ This project tackles the data analytics challenge of college financial datasets.
 
 # LINK TO PROJECT ANALYSIS: [Analysis Github Page](https://alagyn.github.io/PackHacks2021)
 
-503rd Dream Team
+### Project Dependencies
+ - MatPlotLib
+ - numpy
+ - scipy
+ - xlrd
+ - plotly
+
+### Execution READMEs are in core/dataGrapher and core/pandemicData
+
+### 503rd Dream Team
   * Ben Kimbrough
   * Ryan Rice
   
   
-Special Thanks
+### Special Thanks
   * The Statismagician
