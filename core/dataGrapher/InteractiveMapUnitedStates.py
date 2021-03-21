@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Contains code snippets from "https://wellsr.com/python/creating-python-choropleth-maps-with-plotly/"
 
-def create_map(values):
+def create_map(values, num):
     colNames = ["state", "value"]
     dictOfStates = {
         "AL": ["AL", values[0]],
@@ -69,11 +69,12 @@ def create_map(values):
                         hover_name="state",  # DataFrame column hover info
                         locationmode='USA-states')  # Set to plot as US States
     fig.update_layout(
-        title_text='Federal Student Loan Portfolio by Borrower Location (per Billion Dollars)',  # Create a Title
+        title_text='Federal Student Loan Portfolio by Borrower Location |'
+                   ' Balance (in billions) / Borrowers (in thousands)',  # Create a Title
         geo_scope='usa',  # Plot only the USA instead of globe
     )
     fig.show()  # Output the plot to the screen
-    fig.write_html(f'../../docs/output/map.html')
+    fig.write_html(f'../../docs/output/map{num}.html')
 
 
 class InteractiveMapUnitedStates:
